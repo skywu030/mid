@@ -1,0 +1,97 @@
+/* 頁面整體背景 */
+body {
+    background-color: #f8f9fa;
+}
+
+/* 左側側邊欄容器 */
+.sidebar {
+    width: 250px;
+    /* 側邊欄寬度 */
+    height: 100vh;
+    /* 滿版高度（vh = viewport height） */
+    background-color: #ffffff;
+    /* 白色背景 */
+    border-right: 1px solid #000000;
+    /* 右邊淡灰色邊線 */
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列子項目 */
+    justify-content: space-between;
+    /* 上下兩區分開 */
+}
+
+/* === 導覽連結（原本樣式可保留）=== */
+.nav-link {
+    color: #333;
+    font-weight: 500;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    /* ✨ 加上平滑過渡 */
+    border-radius: 6px;
+}
+
+/* icon 樣式 */
+.nav-link i {
+    font-size: 1.2rem;
+    margin-right: 12px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+/* === 滑鼠移上去時的效果 === */
+.nav-link:hover {
+    background-color: #000;
+    /* 背景變黑 */
+    color: #fff;
+    /* 文字變白 */
+    transform: scale(1.05);
+    /* 放大 5% */
+}
+
+/* icon 同步變亮 */
+.nav-link:hover i {
+    color: #fff;
+    /* 霓虹藍（你也可改成粉紅 #f0f）*/
+    opacity: 1;
+    transform: scale(1.2);
+    /* icon 再稍微放大 */
+}
+
+/* === 當前選取項（active）可用不同樣式 === */
+.nav-link.active {
+    background-color: #111;
+    color: #fff;
+    font-weight: 600;
+}
+
+.nav-link.active i {
+    color: #fff;
+}
+
+/* 下半部（底部功能區）樣式 */
+.bottom-section {
+    border-top: 1px solid #000000;
+    padding: 16px;
+}
+
+/* 「立即預約」按鈕特效：黑色斜紋背景 */
+.btn-reserve {
+    background: repeating-linear-gradient(45deg,
+            #000,
+            #000 10px,
+            #111 10px,
+            #111 20px);
+    color: #fff;
+    font-weight: 600;
+    width: 100%;
+    border: none;
+}
+
+/* 底部社群 icon 的樣式 */
+.social-icons a {
+    color: #777;
+    margin: 0 8px;
+    font-size: 1.2rem;
+}
