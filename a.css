@@ -11,8 +11,6 @@ body {
     /* 滿版高度（vh = viewport height） */
     background-color: #ffffff;
     /* 白色背景 */
-    border-right: 1px solid #000000;
-    /* 右邊淡灰色邊線 */
     display: flex;
     flex-direction: column;
     /* 垂直排列子項目 */
@@ -33,7 +31,7 @@ body {
     padding: 12px 20px;
     display: flex;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
     /* ✨ 加上平滑過渡 */
     border-radius: 6px;
 }
@@ -43,7 +41,7 @@ body {
     font-size: 1.2rem;
     margin-right: 12px;
     opacity: 0.7;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
 }
 
 /* === 滑鼠移上去時的效果 === */
@@ -52,7 +50,7 @@ body {
     /* 背景變黑 */
     color: #fff;
     /* 文字變白 */
-    transform: scale(1.05);
+    transform: scale(1.03);
     /* 放大 5% */
 }
 
