@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
         // 建立一個殘影元素
         const trail = document.createElement("div");
         trail.classList.add("cursor-trail");
-        
+
         // 🌟 關鍵修正：確保 document.body 已經存在才附加
         if (document.body) {
-             document.body.appendChild(trail);
+            document.body.appendChild(trail);
         }
 
         // 設定位置（跟隨滑鼠座標）
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // 動畫結束後移除元素，避免太多節點造成 lag
         setTimeout(() => {
             trail.remove();
-        }, 800);
+        }, 500);
     });
 
 
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 找到右側的圖片
     const mainImage = document.getElementById('main-image');
-    
+
     // 找到左側所有的導覽連結
     const navLinks = document.querySelectorAll('.sidebar .nav-link');
 
@@ -62,7 +62,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     setTimeout(() => {
                         mainImage.src = newImageSrc;
                         mainImage.style.opacity = 1;
-                    }, 300); 
+                    }, 300);
+                    // 1. 取得新內容區塊的 ID (例如 "#content-home")
+                    const newContentSelector = this.dataset.content;
+
+                    // 2. 找到目前顯示的區塊 (它有 .active-content)
+                    const currentContent = document.querySelector('.text-section.active-content');
+
+                    // 3. 找到即將要顯示的新區塊
+                    const newContent = document.querySelector(newContentSelector);
+
+                    // 4. 切換
+                    if (newContent && newContent !== currentContent) {
+                        // 移除舊的 active
+                        if (currentContent) {
+                            currentContent.classList.remove('active-content');
+                        }
+                        // 加入新的 active
+                        newContent.classList.add('active-content');
+                    }
                 }
             });
         });

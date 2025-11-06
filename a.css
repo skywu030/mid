@@ -1,6 +1,7 @@
 /* 頁面整體背景 */
 body {
     background-color: #000000;
+    font-family: 'VT323', monospace;
 }
 
 /* 左側側邊欄容器 */
@@ -77,7 +78,7 @@ body {
 /* 下半部（底部功能區）樣式 */
 .bottom-section {
     border-top: 1px solid #ffffff;
-    color:#fff;
+    color: #fff;
     padding: 16px;
 }
 
@@ -101,26 +102,71 @@ body {
     font-size: 1.2rem;
 }
 
+
+
 .main-content {
     /* 往右推 250px (側邊欄的寬度) */
-    margin-left: 250px; 
-    
+    margin-left: 250px;
+
     /* 寬度 = 100% 螢幕 - 250px */
     width: calc(100% - 250px);
-    
-    /* 高度 100% 視窗 */
-    height: 100vh;
-    
-    /* 避免圖片太大時跑出捲軸 */
-    overflow: hidden; 
+
+    /* (height 和 overflow 已被移除)
+     它的高度現在會由內部的 .image-section 和 .text-section 決定 
+    */
 }
 
 /* 讓內容區塊中的圖片填滿 */
 .main-content img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 圖片會填滿區塊，並自動裁切多餘部分 */
+    object-fit: cover;
+    /* 圖片會填滿區塊，並自動裁切多餘部分 */
     transition: opacity 0.3s ease-in-out;
+}
+
+.text-section h2 {
+    text-align: center;
+    margin-bottom: 25px; /* 標題和下方內容的間距 */
+}
+
+/* 將文字區塊的 P (詳細敘述) 置中並加上邊框 */
+.text-section p {
+    text-align: center; /* 1. 文字置中 */
+    
+    border: 1px solid #333; /* 2. 加上文字邊框 */
+    border-radius: 0; /* 3. 邊緣不用圓 (方形) */
+    
+    padding: 20px; /* 讓框線與文字之間有點空隙 */
+    margin-bottom: 20px; /* 和下方 textarea 的間距 */
+}
+/* 文字區塊 (填滿第二個 100vh) */
+.text-section {
+   width: 100%;
+    height: 300px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    font-size: 1rem;
+    margin-top: 20px;
+    /* 確保 padding 和 border 不會撐爆 100% 寬度 */
+    box-sizing: border-box;
+}
+
+.text-section.active-content {
+    display: block;
+}
+
+/* 文字區塊中的 textarea 樣式 */
+.text-section textarea {
+
+    width: 100%;
+    height: 300px;
+    /* 給一個預設高度 */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 1rem;
+    margin-top: 20px;
 }
 
 .cursor-trail {
