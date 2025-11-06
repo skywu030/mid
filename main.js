@@ -1,35 +1,6 @@
 // 🌟 等待網頁元素都載入完成 (DOM)
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ===================================
-    // 1. 滑鼠殘影 (Cursor Trail) 
-    // ===================================
-    // 監聽「整個文件」的滑鼠移動
-    document.addEventListener("mousemove", function (e) {
-        // 建立一個殘影元素
-        const trail = document.createElement("div");
-        trail.classList.add("cursor-trail");
-
-        // 🌟 關鍵修正：確保 document.body 已經存在才附加
-        if (document.body) {
-            document.body.appendChild(trail);
-        }
-
-        // 設定位置（跟隨滑鼠座標）
-        trail.style.left = `${e.pageX}px`;
-        trail.style.top = `${e.pageY}px`;
-
-        // 動畫結束後移除元素，避免太多節點造成 lag
-        setTimeout(() => {
-            trail.remove();
-        }, 500);
-    });
-
-
-    // ===================================
-    // 2. 圖片切換 (Image Switcher)
-    // ===================================
-
     // 找到右側的圖片
     const mainImage = document.getElementById('main-image');
 

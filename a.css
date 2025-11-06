@@ -6,9 +6,6 @@ body {
     font-style: normal;
 }
 
-
-
-
 /* 左側側邊欄容器 */
 .sidebar {
     width: 250px;
@@ -198,7 +195,7 @@ body {
     color: #fff;
     /* 配合暗色主題 */
     box-sizing: border-box;
-
+    font-size: 40px;
     display: none;
     /* 🌟 關鍵：預設隱藏 🌟 */
 }
