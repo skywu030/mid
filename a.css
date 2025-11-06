@@ -1,6 +1,6 @@
 /* 頁面整體背景 */
 body {
-    background-color: #f8f9fa;
+    background-color: #000000;
 }
 
 /* 左側側邊欄容器 */
@@ -9,7 +9,7 @@ body {
     /* 側邊欄寬度 */
     height: 100vh;
     /* 滿版高度（vh = viewport height） */
-    background-color: #ffffff;
+    background-color: #000000;
     /* 白色背景 */
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@ body {
 
 /* === 導覽連結（原本樣式可保留）=== */
 .nav-link {
-    color: #333;
+    color: #fff;
     font-weight: 500;
     padding: 12px 20px;
     display: flex;
@@ -46,9 +46,9 @@ body {
 
 /* === 滑鼠移上去時的效果 === */
 .nav-link:hover {
-    background-color: #000;
+    background-color: #fff;
     /* 背景變黑 */
-    color: #fff;
+    color: #000;
     /* 文字變白 */
     transform: scale(1.03);
     /* 放大 5% */
@@ -56,7 +56,7 @@ body {
 
 /* icon 同步變亮 */
 .nav-link:hover i {
-    color: #fff;
+    color: #000;
     /* 霓虹藍（你也可改成粉紅 #f0f）*/
     opacity: 1;
     transform: scale(1.2);
@@ -65,29 +65,30 @@ body {
 
 /* === 當前選取項（active）可用不同樣式 === */
 .nav-link.active {
-    background-color: #111;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     font-weight: 600;
 }
 
 .nav-link.active i {
-    color: #fff;
+    color: #000;
 }
 
 /* 下半部（底部功能區）樣式 */
 .bottom-section {
-    border-top: 1px solid #000000;
+    border-top: 1px solid #ffffff;
+    color:#fff;
     padding: 16px;
 }
 
 /* 「立即預約」按鈕特效：黑色斜紋背景 */
 .btn-reserve {
     background: repeating-linear-gradient(45deg,
-            #000,
-            #000 10px,
-            #111 10px,
-            #111 20px);
-    color: #fff;
+            #fff,
+            #fff 10px,
+            #ddd 10px,
+            #ddd 20px);
+    color: #000;
     font-weight: 600;
     width: 100%;
     border: none;
@@ -95,7 +96,7 @@ body {
 
 /* 底部社群 icon 的樣式 */
 .social-icons a {
-    color: #777;
+    color: #ffffff;
     margin: 0 8px;
     font-size: 1.2rem;
 }
@@ -119,4 +120,36 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover; /* 圖片會填滿區塊，並自動裁切多餘部分 */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.cursor-trail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    /* 白色半透明 */
+    border-radius: 50%;
+    /* 圓形 */
+    pointer-events: none;
+    /* 不影響滑鼠操作 */
+    transform: translate(-50%, -50%);
+    animation: fadeOut 0.8s linear forwards;
+    /* 淡出動畫 */
+    z-index: 9999;
+}
+
+/* 淡出動畫 */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1) translate(-50%, -50%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.3) translate(-50%, -50%);
+    }
 }
