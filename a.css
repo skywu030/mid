@@ -1,8 +1,13 @@
 /* 頁面整體背景 */
 body {
     background-color: #000000;
-    font-family: 'VT323', monospace;
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
 }
+
+
+
 
 /* 左側側邊欄容器 */
 .sidebar {
@@ -102,6 +107,35 @@ body {
     font-size: 1.2rem;
 }
 
+/* --- 左下角用戶/創作者按鈕樣式 --- */
+.btn-user-creator {
+    display: block;
+    /* 讓 <a> 標籤填滿寬度 (像 div) */
+    color: #fff;
+    /* 確保文字是白色的 */
+    text-decoration: none;
+    /* 移除預設的底線 */
+    border-color: #fff !important;
+    /* 確保邊框是白色的 (覆蓋 bootstrap 預設) */
+    transition: all 0.1s ease;
+    /* 加上平滑過渡 */
+}
+
+/* 滑鼠移上去時的效果 (模仿頂部導覽列) */
+.btn-user-creator:hover {
+    background-color: #fff;
+    /* 背景變白 */
+    color: #000;
+    /* 文字變黑 */
+    transform: scale(1.03);
+    /* 稍微放大 */
+}
+
+/* 滑鼠移上去時，圖示也跟著變黑 */
+.btn-user-creator:hover i {
+    color: #000;
+}
+
 .main-content {
     /* 往右推 250px (側邊欄的寬度) */
     margin-left: 250px;
@@ -125,36 +159,27 @@ body {
 
 .text-section h2 {
     text-align: center;
-    margin-bottom: 25px; /* 標題和下方內容的間距 */
+    margin-bottom: 25px;
+    /* 標題和下方內容的間距 */
 }
 
 /* 將文字區塊的 P (詳細敘述) 置中並加上邊框 */
 .text-section p {
-    text-align: center; /* 1. 文字置中 */
-    
+    text-align: center;
+    /* 1. 文字置中 */
+
     border: 3px solid #fff;
-    border-radius: 0; /* 3. 邊緣不用圓 (方形) */
-    
-    padding: 20px; /* 讓框線與文字之間有點空隙 */
-    margin-bottom: 20px; /* 和下方 textarea 的間距 */
+    border-radius: 0;
+    /* 3. 邊緣不用圓 (方形) */
+
+    padding: 20px;
+    /* 讓框線與文字之間有點空隙 */
+    margin-bottom: 20px;
+    /* 和下方 textarea 的間距 */
 }
 
 .text-section.active-content {
     display: block;
-}
-
-/* 文字區塊中的 textarea 樣式 */
-.text-section textarea {
-
-    width: 100%;
-    height: 300px;
-    /* 給一個預設高度 */
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    font-size: 1rem;
-    margin-top: 20px;
-    border-radius: 0;
 }
 
 .image-section {
@@ -164,43 +189,16 @@ body {
 
 /* --- 文字區塊 (正確的規則) --- */
 .text-section {
-    height: 100vh; /* 正確高度 */
+    height: 100vh;
+    /* 正確高度 */
     width: 100%;
-    padding: 50px; 
-    background-color: #000; /* 配合暗色主題 */
-    color: #fff; /* 配合暗色主題 */
-    box-sizing: border-box; 
-    
-    display: none; /* 🌟 關鍵：預設隱藏 🌟 */
-}
+    padding: 50px;
+    background-color: #000;
+    /* 配合暗色主題 */
+    color: #fff;
+    /* 配合暗色主題 */
+    box-sizing: border-box;
 
-.cursor-trail {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 12px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.8);
-    /* 白色半透明 */
-    border-radius: 50%;
-    /* 圓形 */
-    pointer-events: none;
-    /* 不影響滑鼠操作 */
-    transform: translate(-50%, -50%);
-    animation: fadeOut 0.8s linear forwards;
-    /* 淡出動畫 */
-    z-index: 9999;
-}
-
-/* 淡出動畫 */
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-        transform: scale(1) translate(-50%, -50%);
-    }
-
-    100% {
-        opacity: 0;
-        transform: scale(0.3) translate(-50%, -50%);
-    }
+    display: none;
+    /* 🌟 關鍵：預設隱藏 🌟 */
 }

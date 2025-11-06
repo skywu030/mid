@@ -85,5 +85,27 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+    const soundButton = document.getElementById('btn-sound-toggle');
+    let isMuted = true; // 狀態：true = 關閉, false = 開啟
+
+    if (soundButton) {
+        soundButton.addEventListener('click', function () {
+            // 切換狀態
+            isMuted = !isMuted;
+
+            const icon = document.getElementById('sound-icon');
+            const textNode = icon.nextSibling; // 抓取圖示旁邊的文字 (" 聲音：關閉")
+
+            if (isMuted) {
+                // 更新為「關閉」狀態
+                icon.className = 'bi bi-volume-mute';
+                textNode.textContent = ' 聲音：關閉';
+            } else {
+                // 更新為「開啟」狀態
+                icon.className = 'bi bi-volume-up-fill'; // 'bi-volume-up-fill' 圖示比較明顯
+                textNode.textContent = ' 聲音：開啟';
+            }
+        });
+    }
 
 }); // 🌟 DOMContentLoaded 監聽器的結束大括號
