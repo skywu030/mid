@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 確保 mainImage 和 navLinks 都存在 (避免錯誤)
     if (mainImage && navLinks.length > 0) {
-
+        
         // 為每一個連結都加上「點擊監聽」
         navLinks.forEach(link => {
             link.addEventListener('click', function (e) {
